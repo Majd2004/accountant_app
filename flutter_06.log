@@ -1,0 +1,89 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter build apk --debug
+
+## exception
+
+ProcessPackageException: ProcessException: Found candidates, but lacked sufficient permissions to execute "/mnt/agents/output/flutter_accounting_app/android/gradlew".
+  Command: /mnt/agents/output/flutter_accounting_app/android/gradlew 
+
+```
+#0      LocalProcessManager.start (package:process/src/interface/local_process_manager.dart:56:7)
+#1      ErrorHandlingProcessManager.start.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:699:24)
+#2      _run (package:flutter_tools/src/base/error_handling_io.dart:569:20)
+#3      ErrorHandlingProcessManager.start (package:flutter_tools/src/base/error_handling_io.dart:698:12)
+#4      _DefaultProcessUtils.start (package:flutter_tools/src/base/process.dart:520:28)
+#5      _DefaultProcessUtils.stream (package:flutter_tools/src/base/process.dart:540:35)
+#6      AndroidGradleBuilder.buildGradleApp (package:flutter_tools/src/android/gradle.dart:469:38)
+<asynchronous suspension>
+#7      AndroidGradleBuilder.buildApk (package:flutter_tools/src/android/gradle.dart:224:5)
+<asynchronous suspension>
+#8      BuildApkCommand.runCommand (package:flutter_tools/src/commands/build_apk.dart:141:5)
+<asynchronous suspension>
+#9      FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1408:27)
+<asynchronous suspension>
+#10     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+<asynchronous suspension>
+#11     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#12     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:420:9)
+<asynchronous suspension>
+#13     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+<asynchronous suspension>
+#14     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:364:5)
+<asynchronous suspension>
+#15     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:130:9)
+<asynchronous suspension>
+#16     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+<asynchronous suspension>
+#17     main (package:flutter_tools/executable.dart:93:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.24.5, on Debian GNU/Linux 12 (bookworm) 5.10.134-18.0.10.lifsea8.x86_64, locale en_US)
+    • Flutter version 3.24.5 on channel stable at /tmp/flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision dec2ee5c1f (1 year, 7 months ago), 2024-11-13 11:13:06 -0800
+    • Engine revision a18df97ca5
+    • Dart version 3.5.4
+    • DevTools version 2.37.3
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 34.0.0)
+    • Android SDK at /tmp/android-sdk
+    • Platform android-34, build-tools 34.0.0
+    • ANDROID_HOME = /tmp/android-sdk
+    • Java binary at: /tmp/jdk-17.0.2/bin/java
+    • Java version OpenJDK Runtime Environment (build 17.0.2+8-86)
+    • All Android licenses accepted.
+
+[✗] Chrome - develop for the web (Cannot find Chrome executable at google-chrome)
+    ! Cannot find Chrome. Try setting CHROME_EXECUTABLE to a Chrome executable.
+
+[✗] Linux toolchain - develop for Linux desktop
+    ✗ clang++ is required for Linux development.
+      It is likely available from your distribution (e.g.: apt install clang), or can be downloaded from https://releases.llvm.org/
+    ✗ CMake is required for Linux development.
+      It is likely available from your distribution (e.g.: apt install cmake), or can be downloaded from https://cmake.org/download/
+    • ninja version 1.13.0.git.kitware.jobserver-pipe-1
+    • pkg-config version 1.8.1
+    ✗ GTK 3.0 development libraries are required for Linux development.
+      They are likely available from your distribution (e.g.: apt install libgtk-3-dev)
+
+[!] Android Studio (not installed)
+    • Android Studio not found; download from https://developer.android.com/studio/index.html
+      (or visit https://flutter.dev/to/linux-android-setup for detailed instructions).
+
+[✓] Connected device (1 available)
+    • Linux (desktop) • linux • linux-x64 • Debian GNU/Linux 12 (bookworm) 5.10.134-18.0.10.lifsea8.x86_64
+
+[!] Network resources
+    ✗ A network error occurred while checking "https://maven.google.com/": Connection timed out
+
+! Doctor found issues in 4 categories.
+```
