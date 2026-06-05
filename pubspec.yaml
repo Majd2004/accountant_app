@@ -14,9 +14,9 @@ dependencies:
   cupertino_icons: ^1.0.8
   sqflite: ^2.4.1
   path_provider: ^2.1.5
-  share_plus: ^9.0.0       # كان 12.0.2 - بتعمل مشكلة مع AGP 8.x
-  file_picker: ^8.0.7      # كان 11.0.2 - هاد سبب الكراش
-  permission_handler: ^11.3.1  # كان 12.0.1
+  share_plus: ^12.0.2
+  file_picker: ^11.0.2
+  permission_handler: ^12.0.1
   intl: ^0.20.2
   path: ^1.9.0
 
