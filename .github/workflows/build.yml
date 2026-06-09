@@ -5,7 +5,7 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
-  workflow_dispatch:  # يخليك تشغله يدوياً من GitHub
+  workflow_dispatch:
 
 jobs:
   build:
@@ -21,10 +21,9 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Set up Flutter 3.24.5
+      - name: Set up Flutter (latest stable)
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.5'
           channel: 'stable'
           cache: true
 
@@ -34,7 +33,7 @@ jobs:
       - name: Get Flutter dependencies
         run: flutter pub get
 
-      - name: Build APK (debug)
+      - name: Build APK
         run: flutter build apk --debug
 
       - name: Upload APK
